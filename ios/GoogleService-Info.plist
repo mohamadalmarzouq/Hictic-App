@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>412203085099-pphgqp1n4b45tc5f4dmcm4hsrnd9g52o.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.412203085099-pphgqp1n4b45tc5f4dmcm4hsrnd9g52o</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>412203085099-klto1pkgg8gdqbffgg06iq7a2h4bvdq3.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD8MOmjSmjFACD8qhhnDRbjt7dYSe1gLPw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>412203085099</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.hictic.app</string>
+	<key>PROJECT_ID</key>
+	<string>hictic-1e38b</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hictic-1e38b.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:412203085099:ios:219bf2e9457caf01b4696e</string>
+</dict>
+</plist>

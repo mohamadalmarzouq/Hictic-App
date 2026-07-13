@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HicTic</string>
+    <string name="deep_links_scheme_1">https</string>
+    <string name="deep_links_host_1">www.google.com</string>
+</resources>

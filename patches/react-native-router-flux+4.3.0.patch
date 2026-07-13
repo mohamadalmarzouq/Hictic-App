@@ -1,0 +1,41 @@
+diff --git a/node_modules/react-native-router-flux/src/Router.js b/node_modules/react-native-router-flux/src/Router.js
+index 6f595e4..04f6e38 100644
+--- a/node_modules/react-native-router-flux/src/Router.js
++++ b/node_modules/react-native-router-flux/src/Router.js
+@@ -21,18 +21,23 @@ class App extends React.Component {
+     onDeepLink: null,
+   };
+ 
++  backhandlerListener = null;
++  linkingListener = null;
++
+   componentDidMount() {
+-    BackHandler.addEventListener('hardwareBackPress', this.props.backAndroidHandler || this.onBackPress);
++    this.backhandlerListener = BackHandler.addEventListener('hardwareBackPress', this.props.backAndroidHandler || this.onBackPress);
+ 
+     // If the app was "woken up" by an external route.
+     Linking.getInitialURL().then(url => this.parseDeepURL(url));
+     // Add an event listener for further deep linking.
+-    Linking.addEventListener('url', this.handleDeepURL);
++    this.linkingListener = Linking.addEventListener('url', this.handleDeepURL);
+   }
+ 
+   componentWillUnmount() {
+-    BackHandler.removeEventListener('hardwareBackPress', this.props.backAndroidHandler || this.onBackPress);
+-    Linking.removeEventListener('url', this.handleDeepURL);
++    // BackHandler.removeEventListener('hardwareBackPress', this.props.backAndroidHandler || this.onBackPress);
++    // Linking.removeEventListener('url', this.handleDeepURL);
++    this.backhandlerListener?.remove()
++    this.linkingListener?.remove()
+   }
+ 
+   onBackPress = () => this.props.navigationStore.pop();
+@@ -132,7 +137,7 @@ Router.propTypes = {
+   navigator: PropTypes.func,
+   wrapBy: PropTypes.func,
+   getSceneStyle: PropTypes.func,
+-  sceneStyle: ViewPropTypes.style,
++  sceneStyle: PropTypes.any,
+   createReducer: PropTypes.func,
+   children: PropTypes.element,
+   uriPrefix: PropTypes.string,

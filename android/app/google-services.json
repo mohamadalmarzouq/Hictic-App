@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "412203085099",
+    "project_id": "hictic-1e38b",
+    "storage_bucket": "hictic-1e38b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412203085099:android:c74693795a501bc5b4696e",
+        "android_client_info": {
+          "package_name": "com.hictic.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412203085099-79pl2h46ok351qj5nhfaf0qpvlnhvfgl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hictic.app",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "412203085099-klto1pkgg8gdqbffgg06iq7a2h4bvdq3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hictic.app",
+            "certificate_hash": "1a083a059f72d46519c20a662c8ed8b989009a02"
+          }
+        },
+        {
+          "client_id": "412203085099-sitmqjvipsgg5mra1ni587nuaee3hb3s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hictic.app",
+            "certificate_hash": "baad810d254637466185314378b0c56e4d2e5b8c"
+          }
+        },
+        {
+          "client_id": "412203085099-pve4gg0piisoho42p1l4k9g0rniuqf1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsdkZkTIFu7Pslt9uPYTBsEHCg97s4EX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412203085099-pve4gg0piisoho42p1l4k9g0rniuqf1f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "412203085099-pphgqp1n4b45tc5f4dmcm4hsrnd9g52o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hictic.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

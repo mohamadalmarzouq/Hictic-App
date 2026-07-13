@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8" />
+
+  <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+  />
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://www.wikitude.com/libs/architect.js"></script>
+  <script type="text/javascript" src="js/fastclick.js"></script>
+  <script type="text/javascript" src="ade.js"></script>
+  <link rel="stylesheet" href="simplebar.min.css" />
+  <link
+          href="https://fonts.googleapis.com/css?family=Satisfy"
+          rel="stylesheet"
+  />
+  <link rel="stylesheet" href="default.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="loader"></div>
+
+<div id="scoreUI" style="display:none;">
+  <div class="head d-flex align-items-center justify-content-between">
+    <a onclick="onBackButton()"
+    ><img src="images/back-arrow.png" alt="Back Arrow" class="back-arrow"
+    /></a>
+    <div class="coin bg-dark-transparent-score d-flex align-items-center">
+      <img src="images/coin.png" alt="coin" />
+      <span id="score">0</span>
+    </div>
+  </div>
+</div>
+<div id="timermain" style="display: none;">
+  <div class="time d-flex align-items-center justify-content-center">
+    <div class="time-sec bg-dark-transparent-timer">
+      <span id="timer">10</span>
+      <span class="label">s</span>
+    </div>
+  </div>
+</div>
+<div id="progressbar" style="display: none;">
+  <div
+          class="pogress-logo d-flex align-items-center justify-content-center"
+  >
+    <div class="pogress-bar">
+      <div
+              id="myBar"
+              class="pogress-value"
+              style="height:25px;width:1%"
+      ></div>
+    </div>
+    <div class="cick-logo">
+      <div id="markerId" style="display:none;">
+        <div class="coupon_wrap">
+          <div id="markercontainer">
+            <a
+                    href="JavaScript:Void(0);"
+                    class="needsclick"
+                    id="tapeImageId"
+                    style="cursor:pointer;"
+                    onclick="move()"
+            >
+              <img src="images/ios.JPG" alt="logo" class="coupon_img" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div id="nameTextId" class="starbuck-title" style="display: none;">
+        <div class="paragraph">Starbucks Frappuccino</div>
+      </div>
+      <div id="hintArrow" style="display:none;">
+        <img src="images/clicked.png" alt="logo" class="clicked img" />
+        <img src="images/cover-arrow.png" alt="logo" class="Cover Arrow" />
+      </div>
+    </div>
+  </div>
+</div>
+<div id="bottomUI" style="display: none;">
+  <div class="bottom-sec">
+    <div id="tape" style="display: none;">
+      <div class="info">
+        <p>
+          Tap rapidly on Item to get it<br />
+          before the time runs out
+        </p>
+      </div>
+    </div>
+    <div class="footer d-flex align-items-center justify-content-end">
+      <div class="help">
+        <div class="help-popup">
+          <div class="popup-head d-flex align-items-center justify-content-between">
+            <span>Clues</span>
+            <span id="percent" class="percent">3/5</span>
+          </div>
+          <div class="help-scroll" data-simplebar>
+            <ul id="hints" class="item-list"></ul>
+          </div>
+        </div>
+        <a href="javascript:void(0)" class="help-btn"><img src="images/help.png" alt="Help"/></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="collected" class="modal">
+  <span class="title">Item already grabbed</span>
+  <div class="item-img">
+    <img id="imageid" src="images/logo.png" alt="logo" />
+  </div>
+  <span id="collectedName" class="item-title">Crystal Frappuccino</span>
+  <div class="coin-points d-flex align-items-center justify-content-center">
+    <img src="images/coin.png" alt="coin" />
+    <span id="collectedValue">10</span>
+  </div>
+  <p>This item has been already found by someone else</p>
+  <button
+          type="button"
+          onclick="document.getElementById('collected').style.display = 'none'"
+  >
+    Done
+  </button>
+</div>
+
+<div class="close-overlay"></div>
+<div class="demo-overlay"></div>
+
+<script src="js/particale.js"></script>
+<script src="js/simplebar.js"></script>
+<script type="text/javascript" src="js/mainscript.js"></script>
+
+<script>
+      $(document).ready(function() {
+        $(function() {
+          FastClick.attach(document.body);
+        });
+        $("a.help-btn").click(function() {
+          $(".help-popup").toggle("fast");
+          $("body").toggleClass("overlay");
+          $(".close-overlay").css("display", "block");
+        });
+        $("a.close").click(function() {
+          $(".help-popup").hide("fast");
+          $("body").removeClass("overlay");
+          $(".close-overlay").css("display", "none");
+        });
+
+        $("a.cart-btn").click(function() {
+          $(".cart-popup").css("bottom", "-10px");
+          $("body").toggleClass("overlay");
+          $(".close-overlay").css("display", "block");
+        });
+
+        $(".item-list a").click(function() {
+          $(".modal").show("slow");
+          $("body").addClass("overlay");
+        });
+
+        $("body").click(function(event) {
+          if ($(event.target).hasClass("close-overlay")) {
+            $(".close-overlay").css("display", "none");
+            $(".help-popup").hide("fast");
+            $(".cart-popup").css("bottom", "-290px");
+            $(".modal").hide("slow");
+            $("body").removeClass("overlay");
+          }
+        });
+      });
+    </script>
+</body>
+</html>
